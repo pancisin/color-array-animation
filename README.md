@@ -32,6 +32,7 @@ animation.start((colorsArray) => /* Use generated color array. */);
 ```
 scanner
 bubbles
+traveller
 ```
 
 ## Api
