@@ -1,0 +1,34 @@
+{
+  "name": "color-array-animation",
+  "version": "0.1.9",
+  "description": "",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dist-ems": "npx tsc -m es6 --outDir dist/lib-esm",
+    "dist": "npm run clean && npx tsc  && webpack",
+    "prepare": "npm run dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pancisin/color-array-animation.git"
+  },
+  "author": "Patrik Pancisin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pancisin/color-array-animation/issues"
+  },
+  "homepage": "https://github.com/pancisin/color-array-animation#readme",
+  "dependencies": {
+    "@types/chroma-js": "^2.1.4",
+    "@types/lodash": "^4.14.191",
+    "chroma-js": "^2.4.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "webpack-cli": "^5.0.1",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.2"
+  }
+}
