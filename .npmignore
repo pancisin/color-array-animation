@@ -1,3 +1,5 @@
-/src
+/build
+src
 tsconfig.json
-webpack.config.js
+tslint.json
+.prettierrc

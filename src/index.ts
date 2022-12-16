@@ -1,3 +1,3 @@
 import animationfactory = require("./services/animationfactory");
 
-export = animationfactory;
+export default animationfactory;

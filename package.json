@@ -1,10 +1,10 @@
 {
   "name": "color-array-animation",
-  "version": "0.1.9",
-  "description": "",
-  "main": "./dist/bundle.js",
+  "version": "0.1.18",
+  "description": "Simple library for creation of color array animations.",
+  "main": "dist/bundle.js",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist build",
     "dist-ems": "npx tsc -m es6 --outDir dist/lib-esm",
     "dist": "npm run clean && npx tsc  && webpack",
     "prepare": "npm run dist"
@@ -30,5 +30,8 @@
     "webpack-cli": "^5.0.1",
     "source-map-loader": "^4.0.1",
     "ts-loader": "^9.4.2"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }

@@ -6,14 +6,18 @@ module.exports = {
   optimization: {
     minimize: true,
   },
+  target: "web",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    libraryTarget: "commonjs",
+    library: "ColorArrayAnimation",
+    libraryTarget: "umd",
+    globalObject: "this",
+    umdNamedDefine: true,
   },
-  devtool: "source-map",
+  // devtool: "source-map",
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
+    extensions: ["", ".webpack.js", ".ts", ".tsx", ".js"],
   },
   module: {
     rules: [

@@ -1,13 +1,16 @@
 import bubles = require("../animations/bubbles");
 import scanner = require("../animations/scanner");
+import Animationbase = require("../interfaces/animationbase.interface");
+import Animationfactory = require("../interfaces/animationfactory.interface");
+import Animationinitializer = require("../interfaces/animationinitializer.interface");
 
 const animationsMap: Record<string, Function> = {
   bubbles: bubles,
   scanner: scanner,
 };
 
-const animationfactory = {
-  get: (animationName: string) => {
+const animationfactory: Animationfactory = {
+  get: (animationName: string): Animationinitializer => {
     const animation: Function = animationsMap[animationName];
 
     if (animation == null || typeof animation !== "function") {
@@ -19,11 +22,11 @@ const animationfactory = {
         inputColors: Array<string>,
         ledsCount: number,
         frameRate: number
-      ) => {
-        // animation.apply({}, inputColors, ledsCount, frameRate);
-        animation.call({}, inputColors, ledsCount, frameRate);
+      ): Animationbase => {
+        return animation(inputColors, ledsCount, frameRate);
+        // return animation.call({}, inputColors, ledsCount, frameRate);
       },
-    };
+    } as Animationinitializer;
   },
 };
 
